@@ -11,12 +11,12 @@ catalog:
       label: ETCD_DISCOVERY
       description: "https://discovery.etcd.io/new?size=3"
 
-etcd:
-  health_check:
-    port: 2378
-    request_line: /health
-    interval: 5000
-    response_timeout: 3000
-    unhealthy_threshold: 2
-    healthy_threshold: 2
-
+services:
+  etcd:
+    health_check:
+      port: 2378
+      request_line: /health
+      interval: 5000
+      response_timeout: 3000
+      unhealthy_threshold: 2
+      healthy_threshold: 2
