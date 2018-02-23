@@ -6,8 +6,9 @@ services:
     image: rancher/etcd:v3.2.9-1
     environment:
       - ETCD_DISCOVERY=${ETCD_DISCOVERY}
+    entrypoint: /bin/sh
     command: >
-      sh -c "etcd
+      -c "etcd
       --name $$(hostname)
       --initial-advertise-peer-urls http://$$(hostname -i):2380
       --listen-peer-urls http://$$(hostname -i):2380
