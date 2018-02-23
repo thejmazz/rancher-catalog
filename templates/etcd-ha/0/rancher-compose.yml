@@ -2,7 +2,7 @@ version: '2'
 
 catalog:
   name: etcd-ha
-  version: 3.3.1
+  version: 3.0.17
 
   questions:
     - variable: ETCD_DISCOVERY
