@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  etcd:
+    image: gcr.io/etcd-development/etcd:v3.3.1
+    environment:
+      - ETCD_DISCOVERY=${ETCD_DISCOVERY}
+    command: >
+      etcd
+      --name $(hostname)
+      --initial-advertise-peer-urls http://$(hostname -i):2380
+      --listen-peer-urls http://$(hostname -i):2380
+      --listen-client-urls http://$(hostname -i):2379,http://127.0.0.1:2379
+      --advertise-client-urls http://$(hostname -i):2379
+    labels:
+      io.rancher.scheduler.global: true
+      io.rancher.container.hostname_override: container_name
