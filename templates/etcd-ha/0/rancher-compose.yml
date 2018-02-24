@@ -19,11 +19,12 @@ catalog:
 
 services:
   etcd:
-    scale: ${SCALE}
+    # scale: ${SCALE}
     retain_ip: true
     health_check:
       port: 2379
-      request_line: GET "/health" "HTTP/1.1"
+      # request_line: ''
+      request_line: GET /health HTTP/1.1
       interval: 5000
       response_timeout: 3000
       unhealthy_threshold: 2
