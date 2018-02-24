@@ -1,7 +1,7 @@
 version: '2'
 
 catalog:
-  name: etcd-ha
+  name: etcd
   version: v3.3.1
 
   questions:
@@ -18,7 +18,7 @@ catalog:
       default: 3
 
 services:
-  etcd:
+  node:
     scale: ${SCALE}
     retain_ip: true
     health_check:
@@ -38,7 +38,7 @@ services:
       port_rules:
         - priority: 1
           protocol: http
-          service: etcd
+          service: node
           source_port: 2379
           target_port: 2379
     health_check:
