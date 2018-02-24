@@ -1,4 +1,4 @@
-name: etcd-ha
+name: etcd
 description: A distributed, reliable key-value store for the most critical data of a distributed system
 version: v3.3.1
 category: key-value

@@ -1,3 +1,3 @@
 # rancher-catalog
 
-- [etcd](./templates/etcd-ha)
+- [etcd](./templates/etcd)
