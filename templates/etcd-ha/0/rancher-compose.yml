@@ -10,9 +10,16 @@ catalog:
       required: true
       label: ETCD_DISCOVERY
       description: "https://discovery.etcd.io/new?size=3"
+    - variable: SCALE
+      type: int
+      required: true
+      label: SCALE
+      description: etcd cluster size
+      default: 3
 
 services:
   etcd:
+    scale: ${SCALE}
     retain_ip: true
     health_check:
       port: 2379
