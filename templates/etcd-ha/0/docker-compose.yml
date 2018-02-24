@@ -2,8 +2,7 @@ version: '2'
 
 services:
   etcd:
-    # image: gcr.io/etcd-development/etcd:v3.3.1
-    image: rancher/etcd:v3.2.9-1
+    image: thejmazz/etcd:v3.3.1
     environment:
       - ETCD_DISCOVERY=${ETCD_DISCOVERY}
     entrypoint: /bin/sh
